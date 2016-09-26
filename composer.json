@@ -3,7 +3,8 @@
     "description": "Allows OAuth clients to use random strings instead of sequential integers",
     "type": "library",
     "require": {
-        "laravel/passport": "^1.0"
+        "laravel/passport": "^1.0",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "raveren/kint": "^1.0"
