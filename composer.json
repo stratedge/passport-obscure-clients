@@ -1,0 +1,19 @@
+{
+    "name": "stratedge/passport-obscure-clients",
+    "description": "Allows OAuth clients to use random strings instead of sequential integers",
+    "type": "library",
+    "require": {
+        "laravel/passport": "^1.0"
+    },
+    "require-dev": {
+        "raveren/kint": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarret Byrne",
+            "email": "jarret@solvomedia.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
