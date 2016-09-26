@@ -27,7 +27,7 @@ class ChangeClientIdTypeToString extends Migration
         });
 
         Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
-            $table->string('client_id', 20)->index()->change();
+            $table->string('client_id', 20)->change();
         });
     }
 
