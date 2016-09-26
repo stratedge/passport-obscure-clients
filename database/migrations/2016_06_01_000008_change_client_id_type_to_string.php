@@ -22,6 +22,7 @@ class ChangeClientIdTypeToString extends Migration
         });
 
         Schema::table('oauth_clients', function (Blueprint $table) {
+            $table->dropPrimary();
             $table->string('id', 20)->primary()->change();
         });
 
@@ -38,19 +39,23 @@ class ChangeClientIdTypeToString extends Migration
     public function down()
     {
         Schema::table('oauth_auth_codes', function (Blueprint $table) {
-            $table->integer('client_id')->index()->change();
+            $table->dropIndex(['client_id']);
+            $table->integer('client_id')->change();
         });
 
         Schema::table('oauth_access_tokens', function (Blueprint $table) {
-            $table->integer('client_id')->index()->change();
+            $table->dropIndex(['client_id']);
+            $table->integer('client_id')->change();
         });
 
         Schema::table('oauth_clients', function (Blueprint $table) {
+            $table->dropPrimary();
             $table->increments('id')->change();
         });
 
         Schema::table('oauth_personal_access_clients', function (Blueprint $table) {
-            $table->integer('client_id')->index()->change();
+            $table->dropIndex(['client_id']);
+            $table->integer('client_id')->change();
         });
     }
 }
